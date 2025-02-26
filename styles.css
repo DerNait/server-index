@@ -21,18 +21,22 @@ body {
   width: 100%;
   height: 100%;
   background: 
-    /* Capa semitransparente para "oscurecer" la imagen y dejar ver el fondo */
     linear-gradient(#080808c6, #080808c6),
-    url(assets/imagen_2025-02-26_005744576\(1\).png) no-repeat center center/cover;
+    url(assets/halo2-background.png) no-repeat center center/cover;
   filter: grayscale(100%);
-  z-index: -1; /* Para que la imagen quede detrás del contenido */
+  z-index: -1;
 }
 
 .welcome {
   font-family: 'Orbitron', sans-serif;
 }
 
-/* Glass card base */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
 .glass-card {
   background: rgb(55, 55, 55);
   color: #ccc;
@@ -42,10 +46,9 @@ body {
   overflow: hidden;
 }
 
-/* Card header nuevo estilo */
 .glass-card .card-header {
   position: relative;
-  background-color: #212121; /* gris oscuro */
+  background-color: #212121;
   padding: 0.5rem;
   display: flex;
   align-items: center;
@@ -53,15 +56,24 @@ body {
   justify-content: center;
 }
 
+.glass-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(244, 24, 24, 0.585);
+}
+
+
 .card-header-info {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* espacio entre la imagen y el bloque de texto */
+  gap: 0.5rem;
   margin-bottom: 1em;
 }
 
-/* La imagen de perfil ahora es más grande para abarcar h1 y h3 */
 .profile-img {
   height: 6rem;  
   width: 6rem;
@@ -70,46 +82,49 @@ body {
   z-index: 10;
 }
 
-/* Contenedor para el bloque de texto (número y nombre) */
 .card-title-bg {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 6rem; /* igual a la altura de la imagen */
+  height: 6rem;
   padding: 0 0.5rem;
   z-index: 1;
 }
 
-/* Pseudo-elemento para el degradado que se muestra detrás del bloque de texto */
 .card-title-bg::before {
   content: "";
   position: absolute;
   top: 0;
-  left: -3rem;  /* inicia a la mitad de la imagen (6rem / 2) */
+  left: -3rem;
   height: 100%;
-  width: calc(100% + 7rem);  /* se extiende 3rem a la izquierda + 2rem extra a la derecha */
+  width: calc(100% + 7rem);
   background: linear-gradient(to right, rgb(18, 18, 18), transparent);
   z-index: -1;
 }
 
-/* Opcionales: Ajuste de tamaños de fuente para h1 y h3 */
+.card-img-top {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  max-height: 230px;
+}
+
+
 .card-title {
   margin: 0;
 }
 
 .card-subtitle {
   margin: 0;
-  font-size: 1.2rem; /* ajusta según convenga */
+  font-size: 1.2rem;
   color: #ccc;
 }
 
-/* Elemento central de búsqueda */
 .card-search {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 150px; /* mayor ancho */
+  width: 150px;
   background-color: #2f2f2f;
   border: 1px solid #555;
   border-radius: 5px;
@@ -123,7 +138,6 @@ body {
   text-align: center;
 }
 
-/* Grupo de controles en la derecha */
 .card-controls {
   position: absolute;
   right: 0rem;
@@ -132,7 +146,6 @@ body {
   height: 100%;
 }
 
-/* Estilos para los botones de control */
 .btn-control {
   background: none;
   border: none;
@@ -152,24 +165,20 @@ body {
   color: #ccc;
 }
 
-/* Hover específico para el botón de cerrar */
 .btn-closed:hover {
   background-color: rgb(254, 38, 38);
   color: #ccc;
 }
 
-/* Imagen de la card */
 .card-img-top {
   object-fit: cover;
   width: 100%;
 }
 
-/* Card body */
 .glass-card .card-body {
   padding: 1rem;
 }
 
-/* Botón con degradado (ya existente) */
 .btn-gradient {
   background: linear-gradient(to top, #94111182, transparent);
   display: flex;
