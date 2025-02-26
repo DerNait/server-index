@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+  background-color: #131313;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header-seamless {
+  background: linear-gradient(to bottom, #080808, #131313e6);
+  height: 80px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Orbitron', sans-serif;
+  color: #dd5050;
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    /* Capa semitransparente para "oscurecer" la imagen y dejar ver el fondo */
+    linear-gradient(#080808c6, #080808c6),
+    url(assets/imagen_2025-02-26_005744576\(1\).png) no-repeat center center/cover;
+  filter: grayscale(100%);
+  z-index: -1; /* Para que la imagen quede detrás del contenido */
+}
+
+.welcome {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Glass card base */
+.glass-card {
+  background: rgb(55, 55, 55);
+  color: #ccc;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Card header nuevo estilo */
+.glass-card .card-header {
+  position: relative;
+  background-color: #212121; /* gris oscuro */
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  justify-content: center;
+}
+
+.card-header-info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* espacio entre la imagen y el bloque de texto */
+  margin-bottom: 1em;
+}
+
+/* La imagen de perfil ahora es más grande para abarcar h1 y h3 */
+.profile-img {
+  height: 6rem;  
+  width: 6rem;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 10;
+}
+
+/* Contenedor para el bloque de texto (número y nombre) */
+.card-title-bg {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 6rem; /* igual a la altura de la imagen */
+  padding: 0 0.5rem;
+  z-index: 1;
+}
+
+/* Pseudo-elemento para el degradado que se muestra detrás del bloque de texto */
+.card-title-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -3rem;  /* inicia a la mitad de la imagen (6rem / 2) */
+  height: 100%;
+  width: calc(100% + 7rem);  /* se extiende 3rem a la izquierda + 2rem extra a la derecha */
+  background: linear-gradient(to right, rgb(18, 18, 18), transparent);
+  z-index: -1;
+}
+
+/* Opcionales: Ajuste de tamaños de fuente para h1 y h3 */
+.card-title {
+  margin: 0;
+}
+
+.card-subtitle {
+  margin: 0;
+  font-size: 1.2rem; /* ajusta según convenga */
+  color: #ccc;
+}
+
+/* Elemento central de búsqueda */
+.card-search {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px; /* mayor ancho */
+  background-color: #2f2f2f;
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 0.25rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #7d7d7d;
+  text-align: center;
+}
+
+/* Grupo de controles en la derecha */
+.card-controls {
+  position: absolute;
+  right: 0rem;
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+/* Estilos para los botones de control */
+.btn-control {
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 1rem;
+  padding: 0.5rem 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 0;
+}
+
+.btn-control:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ccc;
+}
+
+/* Hover específico para el botón de cerrar */
+.btn-closed:hover {
+  background-color: rgb(254, 38, 38);
+  color: #ccc;
+}
+
+/* Imagen de la card */
+.card-img-top {
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Card body */
+.glass-card .card-body {
+  padding: 1rem;
+}
+
+/* Botón con degradado (ya existente) */
+.btn-gradient {
+  background: linear-gradient(to top, #94111182, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  width: 50%;
+  height: 100px;
+  color: #ccc;
+  padding: 0.75rem 1.25rem;
+  font-size: 1.25rem;
+  text-align: center;
+  transition: background 0.3s;
+  font-family: 'Orbitron', sans-serif;
+  filter: none !important;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(to top, #570c0c, transparent);
+  text-decoration: none;
+  color: #fff;
+}
