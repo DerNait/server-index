@@ -17,16 +17,24 @@
   </header>
 
   <section id="hero" class="d-flex flex-column align-items-center justify-content-center" style="min-height: 100vh; padding-top: 80px;">
-    <div class="text-center mb-4 welcome">
+    <div class="text-center mt-2 mb-4 welcome">
       <h1 class="text-white">BIENVENIDOS</h1>
       <p class="text-white">Video de bienvenida (obligatorio ver):</p>
     </div>
-    <div class="w-50 mb-4">
-      <div class="ratio ratio-16x9">
-        <iframe src="https://www.youtube.com/embed/GKDkKKt9Y7I" title="YouTube video" allowfullscreen></iframe>
+      <!-- Para pantallas pequeñas -->
+      <div class="w-100 d-md-none mb-4">
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.youtube.com/embed/GKDkKKt9Y7I" title="YouTube video" allowfullscreen></iframe>
+        </div>
       </div>
-    </div>
-    <div class="w-100 d-flex justify-content-center">
+
+      <!-- Para pantallas medianas en adelante -->
+      <div class="w-50 d-none d-md-block mb-4">
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.youtube.com/embed/GKDkKKt9Y7I" title="YouTube video" allowfullscreen></iframe>
+        </div>
+      </div>
+    <div class="w-100 d-flex justify-content-center mb-2">
       <a href="#cards" class="btn btn-gradient">Ir a carnets</a>
     </div>
   </section>
